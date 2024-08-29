@@ -1,9 +1,27 @@
-<?php
-$urls = array(
-    "https://m.twitch.tv/vleafnin/home",
-    "https://m.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUIcmlja3JvbGw%3D"
-);
-$randomIndex = array_rand($urls);
-header("Location: " . $urls[$randomIndex]);
-exit();
-?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+        // Array of URLs to randomly redirect to
+        var urls = [
+            "https://m.twitch.tv/vleafnin/home",
+            "https://m.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUIcmlja3JvbGw%3D"
+        ];
+
+        // Function to redirect to a random URL
+        function redirect() {
+            var randomIndex = Math.floor(Math.random() * urls.length);
+            window.location.href = urls[randomIndex];
+        }
+
+        // Execute the redirect when the page loads
+        window.onload = redirect;
+    </script>
+</head>
+<body>
+    <p>If you are not redirected automatically, <a href="#" onclick="redirect()">click here</a>.</p>
+</body>
+</html>
